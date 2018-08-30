@@ -1,6 +1,7 @@
 package javafx.application;
 
 import java.util.Random;
+
 import javafx.scene.control.Label;
 
 public class janken_controller {
@@ -75,3 +76,4 @@ public class janken_controller {
      scoreLabel.setText("score:"+score+" Win:"+win+" Draw:"+draw+" Lose:"+lose);
      }
 }
+//変更
