@@ -1,5 +1,6 @@
 package Janken;
 import javafx.application.Application;
+import javafx.application.janken_controller;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -21,6 +22,7 @@ public class JankenView extends Application {
  private Button guButton;
  private Button cyokiButton;
  private Button paButton;
+ private janken_controller jc;//じゃんけん制御オブジェクト変数
 
   @Override
  public void start(Stage stage) throws Exception {
@@ -31,6 +33,12 @@ public class JankenView extends Application {
   myLayout(stage);
 
    stage.show();
+ //じゃんけん制御クラスのインスタンス
+   jc = new janken_controller(cpuLabel, humanLabel, resultLabel,scoreLabel);
+   //イベント処理
+   guButton.setOnAction(event -> jc.putOutRockHand());
+   cyokiButton.setOnAction(evet -> jc.putOutScissorsHand());
+   paButton.setOnAction(evet -> jc.putOutPaperHand());
  }
 
 
